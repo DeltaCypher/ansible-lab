@@ -1,0 +1,2 @@
+- name: install httpd service on both node
+  command: yum -y install httpd

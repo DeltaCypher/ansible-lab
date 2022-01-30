@@ -1,0 +1,8 @@
+--- # roles task
+- hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+  gather_facts: yes
+  roles:
+    - webserver

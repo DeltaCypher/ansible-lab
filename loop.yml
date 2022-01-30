@@ -1,0 +1,16 @@
+--- # loop execution
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  
+  tasks:
+    - name: adding user using loop execution
+      user: name='{{item}}' state=present   
+      with_items:
+        - user1
+        - user2
+        - user3
+        - user4
+        - user5
+

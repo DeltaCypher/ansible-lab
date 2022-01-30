@@ -1,0 +1,23 @@
+--- # detail of docment
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  gather_facts: yes
+  vars:
+    pkgname: httpd
+ 
+  tasks:
+    - name: install httpd pakage
+      action: yum name='{{pkgname}}' state=present
+      notify: restart HTTPD
+
+  handlers:
+    - name: restart HTTPD
+      action: service name=httpd state=restarted
+
+      
+     
+
+
+
